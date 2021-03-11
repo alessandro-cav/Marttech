@@ -67,7 +67,7 @@ public class ClienteController {
 	@GetMapping("/consultas")
 	public ResponseEntity<List<ClienteResponseDTO>> consultas(Cliente filtro){
 		ExampleMatcher exampleMatcher =  ExampleMatcher.matching().withStringMatcher(StringMatcher.CONTAINING);
-		org.springframework.data.domain.Example<Cliente> example = Example.of(filtro, exampleMatcher);
+		Example<Cliente> example = Example.of(filtro, exampleMatcher);
 		List<ClienteResponseDTO>editoraResponseDTOs =  this.clienteService.findAll(example);
 		return ResponseEntity.ok(editoraResponseDTOs);
 	}

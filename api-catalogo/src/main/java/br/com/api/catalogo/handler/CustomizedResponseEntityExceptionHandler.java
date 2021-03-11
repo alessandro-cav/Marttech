@@ -41,7 +41,7 @@ public class CustomizedResponseEntityExceptionHandler {
 	}
 	
 	@ExceptionHandler(CompraNotFoundException.class)
-	public ResponseEntity<Object> allHandlerCompraotFounException(CompraNotFoundException ex, WebRequest request) {
+	public ResponseEntity<Object> allHandlerCompraNotFounException(CompraNotFoundException ex, WebRequest request) {
 		return new ResponseEntity<Object>(
 				new ExceptionResponse(ex.getMessage(), request.getDescription(false), LocalDateTime.now()),
 				HttpStatus.NOT_FOUND);
